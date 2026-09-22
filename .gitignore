@@ -25,7 +25,6 @@ __pycache__/
 data/interim/
 
 # Derived processed files - regeneratable from raw data
-data/processed/*.sqlite
 data/processed/prices_clean.csv.gz
 data/processed/price_series_monthly.csv
 data/processed/volatility_series.csv

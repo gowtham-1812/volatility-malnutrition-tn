@@ -103,6 +103,9 @@ The project's goal is to provide a data-driven approach to identifying vulnerabl
 - **Logistic Regression**: Accuracy: 61.6%
 - **Dummy Baseline**: Accuracy: 44.4%
 
+**Statistical Significance & Ablation**:
+The full feature set outperformed controls alone in the Random Forest nested CV (66.6% vs 58.4% mean accuracy, winning the paired F1 comparison in 9 out of 10 repeated CV iterations). However, a strict permutation test found this improvement was not statistically significant at the 5% level (p=0.069). Furthermore, this aligns with our linear OLS regression results which found that the primary price volatility coefficient for stunting was non-significant (p=0.822) after adjusting for controls. Therefore, while the machine learning framework detected some predictive signal in price instability, the result should be read strictly as suggestive and exploratory, not confirmed.
+
 **Why are the accuracies around 60-66%?**
 While the Random Forest (66.6%) clearly outperforms random guessing (44.4%), the ceiling for accuracy is severely constrained by the **small sample size** of our dataset. We only have 32 districts in Tamil Nadu to train on. Extremely complex algorithms require thousands of rows to confidently learn patterns without memorizing noise (overfitting). Furthermore, predicting complex human health outcomes based purely on high-level macro-economic district averages is inherently noisy (an issue known in statistics as the *ecological fallacy*). 
 
