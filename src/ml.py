@@ -7,11 +7,17 @@ Trains classifiers, runs nested cross-validation, ablation, permutation tests.
 
 import sys
 import time
+import warnings
 import collections
 import numpy as np
 import pandas as pd
 import joblib
 from pathlib import Path
+
+# Suppress benign sklearn warnings about sparse CV folds and deprecated defaults
+warnings.filterwarnings("ignore", category=UserWarning, module="sklearn")
+warnings.filterwarnings("ignore", category=FutureWarning, module="sklearn")
+
 from sklearn.model_selection import (
     train_test_split, StratifiedKFold, RepeatedStratifiedKFold, GridSearchCV
 )
@@ -56,7 +62,7 @@ def get_models():
     scaler = StandardScaler()
     
     # Models
-    logreg = LogisticRegression(penalty="l2", solver="lbfgs", max_iter=5000, class_weight="balanced")
+    logreg = LogisticRegression(solver="lbfgs", max_iter=5000, class_weight="balanced")
     rf = RandomForestClassifier(n_estimators=200, class_weight="balanced", random_state=SEED)
     gb = GradientBoostingClassifier(random_state=SEED, subsample=0.8)
     dummy = DummyClassifier(strategy="stratified", random_state=SEED)
