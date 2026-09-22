@@ -1,0 +1,45 @@
+# Data and Archives
+archive.zip
+Data/archive/
+
+# Python Virtual Environments
+.venv/
+venv/
+env/
+
+# Python Cache
+__pycache__/
+*.pyc
+
+# IDEs
+.vscode/
+.idea/
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# Secrets - never commit
+.env
+
+# Large generated data (raw export, too big for git)
+data/interim/
+
+# Derived processed files - regeneratable from raw data
+data/processed/*.sqlite
+data/processed/prices_clean.csv.gz
+data/processed/price_series_monthly.csv
+data/processed/volatility_series.csv
+data/processed/district_alias.csv
+
+# Trained model artifacts
+*.joblib
+models/
+
+# Generated reports (figures, tables, ML outputs)
+reports/
+
+# CS1 archived code (old DB-based pipeline)
+CS1/
+
+# Submission execution log (large)
+submission/execution_output.txt
