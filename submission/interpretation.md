@@ -1,0 +1,3 @@
+# Machine Learning Interpretation
+
+The final Random Forest model evaluating both volatility and control features achieved a repeated nested-CV accuracy of 66.6% and an F1 score of 0.675, outperforming the stratified dummy baseline's accuracy of 44.4%. While incorporating volatility features improved model performance over using controls alone, the permutation test (p = 0.069) indicates that this predictive ability is not statistically significant at the 5% level, meaning the evidence is weak. These findings must be interpreted with caution due to the severe small-sample limitation of analyzing only 32 districts (and only 8 districts in the hold-out test).
